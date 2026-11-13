@@ -46,4 +46,7 @@ still breaks OCP and why that is acceptable here.
 
     Prediction: Before using the product factory class, the method of load_inventory() and also add product function that is inside main() will be needed to be changed to accomodate this new item. After using this factory, the construction descision changes into one location, ProductFactory.create(). The menu or data handling may still need updating to support bundle-specific input. The factory still breaks OCP beacuse adding a product type requires modifying if/elif block. However, this is still acceptable for a small application because it centralise the change and avoids unnecessary complexity. 
 
-7. 
+7. Think back to the Lab 8 LSP discussion. If Product validates that stock cannot go negative,
+should DigitalProduct be allowed to skip or change that rule? Why?
+
+    No, Digital Product should not skip or change the non-negative stock rule. Under LSP, it must remain usable whereever a Product is expected and preserve the parent class's guarentees. 
