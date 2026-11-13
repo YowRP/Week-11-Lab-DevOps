@@ -8,7 +8,7 @@ class Product (ABC):
         if price <= 0:
             raise ValueError("Price must be greater than zero")
 
-        if stock <= 0:
+        if stock < 0:
             raise ValueError("Stock cannot be negative")
         
         self.__product_id = product_id
