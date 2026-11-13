@@ -68,7 +68,7 @@ def load_products(path:str, inventory:Inventory, supplier:Supplier) -> None:
             for row in reader:
                 try:
                     product = ProductFactory.create(
-                        row[0], capitalize(),
+                        row[0].capitalize(),
                         row[1],
                         row[2],
                         float(row[3]),
@@ -83,7 +83,7 @@ def load_products(path:str, inventory:Inventory, supplier:Supplier) -> None:
                     print(f"Product skipped: {error}")
 
         print(f"{loaded} products loaded")
-        
+
     finally:
         print("Load attmept finished.")
 
