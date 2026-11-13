@@ -50,3 +50,14 @@ still breaks OCP and why that is acceptable here.
 should DigitalProduct be allowed to skip or change that rule? Why?
 
     No, Digital Product should not skip or change the non-negative stock rule. Under LSP, it must remain usable whereever a Product is expected and preserve the parent class's guarentees. 
+
+8. A user enters abc, then -5, then 12.50. Write down exactly what prints after each entry and
+what value is returned. Then run it and check.
+
+    Prediction: 
+        1st Entry (user enters 'abc'): The message of "Please enter a valid number, e.g. 12.50" printed and asks again.
+        2nd Entry (user enters -5): The message of "Please enter a number greater than zero." printed and asks again.
+        3rd Entery (user enters 12.50): Prints no error message and returns the float 12.50.
+
+    Actual results:
+    
