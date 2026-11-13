@@ -19,7 +19,7 @@ class PercentageDiscount(DiscountStrategy):
     def apply(self, total:float) -> float:
         return total * (1- self.__percentage / 100)
 
-class BuilkDiscount(DiscountStrategy):
+class BulkDiscount(DiscountStrategy):
 
     def __init__ (self, threshold:float, amount:float) -> None:
         self.__threshold = threshold
