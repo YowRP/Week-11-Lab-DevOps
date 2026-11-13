@@ -20,11 +20,11 @@ class Product (ABC):
     def update_stock(self, quantity: int)-> bool :
 
         if quantity < 0 :
-            return False
+            raise ValueError("Stock cannot be negative.")
 
-        else:
-            self.__stock = quantity
-            return True
+        
+        self.__stock = quantity
+        return True
 
     def display_information (self) -> None:
         print (f"Product ID:  {self.__product_id} | Product Name: {self.__name} | Price: ${self.__price:.2f} | Stock: {self.__stock}")
