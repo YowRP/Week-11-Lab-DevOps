@@ -60,4 +60,7 @@ what value is returned. Then run it and check.
         3rd Entery (user enters 12.50): Prints no error message and returns the float 12.50.
 
     Actual results:
-    
+        1st Entry : Please enter a valid number, e.g. 12.50
+        2nd Entry: Please enter a number greater than zero.
+        3rd Entry: Enter the price of the product: 12.50
+                   Enter the stock amount of the product: 
