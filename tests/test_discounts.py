@@ -4,6 +4,7 @@ from order import Order
 from supplier import Supplier
 from product_factory import ProductFactory
 from discount_strategy import BulkDiscount, NoDiscount, PercentageDiscount, DiscountStrategy
+from discount_strategy import StudentDiscount
 
 class TestDiscounts(unittest.TestCase):
 
@@ -54,6 +55,12 @@ class TestDiscounts(unittest.TestCase):
         order.set_discount(PercentageDiscount(10))
 
         self.assertAlmostEqual(order.calculate_total(), 225.0)
+
+    def test_student_discount(self):
+        order = Order("ORD07", StudentDiscount())
+        order.add_order_line(self.product, 5)
+
+        self.assertAlmostEqual(order.calculate_total(), 237.5)
 
 
 if __name__ == "__main__":
