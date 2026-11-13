@@ -2,6 +2,7 @@ from inventory import Inventory
 from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from supplier import Supplier
+from product_factory import ProductFactory
 import os 
 import json
 
@@ -73,11 +74,11 @@ def main() -> None:
 
                 if product_type == "1":
                     weight = float(input("Enter the weight (kg): ").strip())
-                    product = PhysicalProduct(product_id, name, price, stock, weight, supplier)
+                    product = ProductFactory.create("Physical", product_id, name, price, stock, supplier, weight = weight)
 
                 elif product_type == "2":
                     download_size = float(input("Enter the download size (MB): ").strip())
-                    product = DigitalProduct(product_id, name, price, stock, download_size, supplier)
+                    product = ProductFactory.create("Digital", product_id, name, price, stock, supplier, download_size = download_size )
 
             except ValueError:
                 print("Invalid input, Product not added.")
