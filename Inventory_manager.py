@@ -85,7 +85,7 @@ def load_products(path:str, inventory:Inventory, supplier:Supplier) -> None:
         print(f"{loaded} products loaded.")
 
     finally:
-        print("Load attmept finished.")
+        print("Load attempt finished.")
 
 def main() -> None:
     inventory = load_inventory()
