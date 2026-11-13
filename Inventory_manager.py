@@ -38,6 +38,18 @@ def load_inventory () -> Inventory :
 
     return inventory
 
+def get_positive_float(prompt:str) -> float:
+    while True: 
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than zero.")
+                continue
+            return value
+        
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
 def main() -> None:
     inventory = load_inventory()
 
@@ -69,7 +81,7 @@ def main() -> None:
             supplier = Supplier(supplier_id, supplier_name, contact_email)
 
             try:
-                price = float(input("Enter the price of the product: ").strip())
+                price = get_positive_float("Enter the price of the product: ")
                 stock = int(input("Enter the stock amount of the product: ").strip())
 
                 if product_type == "1":
