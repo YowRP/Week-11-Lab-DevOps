@@ -38,4 +38,12 @@ multiplicity for each end, then check it against your code.
 5. What happens if you call ProductFactory.create("service", ...)? Which line raises the
 exception, and what happens to your program if nothing catches it? Run it and check.
 
-    Prediction: 
+    Prediction: The use of ProductFactory.create("service", ....) will the following arguments will raise ValueError, because "service" is not a supported product type. The raise ValueErorr(...) line in the else block of product_factory.py raises the exception. If nothing catches it, the program stops and it displays a traceback. 
+
+6. Suppose a new BundleProduct type is added. How many places in your code would need
+to change before you added the factory, and how many after? Count them, then explain why the factory
+still breaks OCP and why that is acceptable here.
+
+    Prediction: Before using the product factory class, the method of load_inventory() and also add product function that is inside main() will be needed to be changed to accomodate this new item. After using this factory, the construction descision changes into one location, ProductFactory.create(). The menu or data handling may still need updating to support bundle-specific input. The factory still breaks OCP beacuse adding a product type requires modifying if/elif block. However, this is still acceptable for a small application because it centralise the change and avoids unnecessary complexity. 
+
+7. 
