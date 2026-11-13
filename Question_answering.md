@@ -64,3 +64,21 @@ what value is returned. Then run it and check.
         2nd Entry: Please enter a number greater than zero.
         3rd Entry: Enter the price of the product: 12.50
                    Enter the stock amount of the product: 
+
+9. Before running, write down how many products will load, which messages will print, and in
+what order. Then rename products.csv and predict again: which of except, else and finally will run?
+
+    Predict: Due to some differentiations in my current code, which physical is renamed as Physical, the code would not run. However, after the alterations, the product prediction would load as follows:
+            Desk Lamp, Photo Editor and Monitor Stand
+
+            For the messages that may appear will be :
+            Product Skipped: Unkown product type: Service
+            Product Skipped: could not convert string to float 'abc'
+            3 products loaded 
+            Load attempt failed
+    
+    Predict 2: The file name 'products.csv' will not be the same and hence the Python code could not load the file / find the file.
+        The message printed for this will be:
+        Products file not found: products.csv
+        Load attempt finished.
+
